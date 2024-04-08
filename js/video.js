@@ -48,7 +48,7 @@ document.querySelector("#skip").addEventListener("click", function () {
 	}
 })
 
-// Mutes/unmutes the video
+// Mutes and unmutes the video
 document.querySelector("#mute").addEventListener("click", function() {
 	let muteText = document.querySelector("#mute").innerHTML
 	if (muteText == "Mute") {
@@ -63,19 +63,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 })
 
-
 // Changes the volume based on the slider and updates volume information
-// document.querySelector("#slider").addEventListener("input", function () {
-// 	let currentVolume = (document.getElementById("slider").value / 100)
-// 	console.log(`The current value is ${currentVolume}`)
-// })
-
 document.querySelector("#slider").addEventListener("change", function () {
-	const initialVolume = document.getElementById("slider").value / 100;
 	let currentVolume = document.getElementById("slider").value / 100;
 	document.querySelector("#volume").innerHTML = `${currentVolume*100}%`;
 	video.volume = currentVolume;
-	console.log(`The current value is ${initialVolume}`)
 	console.log(`The current value is ${currentVolume}`)
 	console.log(`<span id = "volume">${currentVolume*100}%</span>`)
 })
